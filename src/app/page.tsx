@@ -1,9 +1,21 @@
-function Home() {
-  return (
-    <div className="px-8 min-h-screen bg-neutral-900 text-white">
-      <section>
-        
+import ServiceCard from "@/components/home/ServiceCard";
+import SkillCard from "@/components/home/SkillCard";
 
+function Home() {
+  const skills = [
+    { name: "HTML CSS JS", icon: "🌐" },
+    { name: "ReactJS", icon: "⚛️" },
+    { name: "NextJS", icon: "▲" },
+    { name: "NodeJS", icon: "🟢" },
+    { name: "ExpressJS", icon: "🚀" },
+    { name: "AWS", icon: "☁️" },
+    { name: "DSA", icon: "🔍" },
+    { name: "PostgreSQL & MongoDB", icon: "🗄️" },
+  ];
+
+  return (
+    <div className="px-4 md:px-8 min-h-screen bg-neutral-900 text-white">
+      <section>
         <p className="text-gray-300 mb-8">
           As a full stack developer with 2 years of full-time experience and 1
           year as an Android developer intern, I specialize in web development,
@@ -24,32 +36,37 @@ function Home() {
         {/* What I'm Doing Section */}
         <h2 className="text-3xl font-bold mt-16 mb-8">What I&apos;m Doing</h2>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Service Cards */}
-          <div className="bg-[#212121] p-6 rounded-xl">
-            <div className="text-[#FFD700] mb-4">📱</div>
-            <h3 className="text-xl font-bold mb-2">Mobile Apps</h3>
-            <p className="text-gray-300">
-              Professional development of applications for Android and ios.
-            </p>
-          </div>
+          <ServiceCard
+            icon="/phone-app.png"
+            title="Mobile Apps"
+            description="Professional development of applications for Android and ios."
+          />
+          <ServiceCard
+            icon="/web-dev.png"
+            title="Web Development"
+            description="High-quality development of sites at the professional level."
+          />
+          <ServiceCard
+            icon="/devops.png"
+            title="DevOps"
+            description="Expertise in CI/CD, containerization, cloud services and infrastructure automation."
+          />
+          <ServiceCard
+            icon="/backend.svg"
+            title="Backend Development"
+            description="Expertise in NodeJS, ExpressJS, MongoDB, PostgreSQL, and AWS."
+          />
+        </div>
 
-          <div className="bg-[#212121] p-6 rounded-xl">
-            <div className="text-[#FFD700] mb-4">💻</div>
-            <h3 className="text-xl font-bold mb-2">Web Development</h3>
-            <p className="text-gray-300">
-              High-quality development of sites at the professional level.
-            </p>
-          </div>
+        {/* Skills Section */}
+        <h2 className="text-3xl font-bold mt-16 mb-8">Skills</h2>
 
-          <div className="bg-[#212121] p-6 rounded-xl">
-            <div className="text-[#FFD700] mb-4">🎨</div>
-            <h3 className="text-xl font-bold mb-2">UI/UX Design</h3>
-            <p className="text-gray-300">
-              The most modern and high-quality design made at a professional
-              level.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 min-[450px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-16">
+          {skills.map((skill, index) => (
+            <SkillCard key={index} name={skill.name} icon={skill.icon} />
+          ))}
         </div>
       </section>
     </div>

@@ -8,7 +8,7 @@ function Navbar() {
 
   return (
     <div className="flex justify-between items-end">
-      <h1 className="text-3xl font-bold px-8">
+      <h1 className="text-3xl font-bold px-4 md:px-8 mt-6 md:mt-0">
         {pathname === "/"
           ? "About Me"
           : pathname === "/resume"
@@ -19,7 +19,7 @@ function Navbar() {
           ? "Contact"
           : "Blog"}
       </h1>
-      <nav className="inline-flex gap-16 bg-highlight/10 py-5 px-8 rounded-bl-3xl rounded-tr-3xl border border-highlight/10">
+      <nav className="hidden md:inline-flex gap-16 bg-highlight/10 py-5 px-8 rounded-bl-3xl rounded-tr-3xl border border-highlight/10">
         <Link
           href="/"
           className={

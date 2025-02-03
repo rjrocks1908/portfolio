@@ -3,6 +3,7 @@ import Sidebar from "@/components/sidebar/Sidebar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Bottombar from "@/components/bottombar/Bottombar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,13 +30,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex xl:flex-row flex-col">
+        <div className="flex xl:flex-row flex-col container mx-auto">
           <Sidebar />
           <div className="flex-1 my-4 mr-4 ml-4 xl:ml-0 bg-neutral-900 text-white rounded-3xl border border-neutral-800 overflow-hidden">
             <Navbar />
-            <div className="w-12 h-1 bg-[#FFD700] mt-2 mb-8 rounded-full ml-8"></div>
+            <div className="w-12 h-1 bg-[#FFD700] mt-2 mb-8 rounded-full ml-4 md:ml-8"></div>
             {children}
           </div>
+          <Bottombar className="block md:hidden" />
         </div>
       </body>
     </html>
