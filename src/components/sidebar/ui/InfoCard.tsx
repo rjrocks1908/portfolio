@@ -9,7 +9,7 @@ function InfoCard({
 }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="text-[#FFD700] p-4 rounded-2xl bg-neutral-800 shadow-[-1.5px_-1.5px_4px_rgba(255,255,255,0.15)]">
+      <span className="text-highlight p-4 rounded-2xl bg-neutral-800 shadow-[-1.5px_-1.5px_4px_rgba(255,255,255,0.15)]">
         {icon}
       </span>
       <div>

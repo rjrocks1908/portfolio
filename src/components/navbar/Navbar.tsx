@@ -8,7 +8,7 @@ function Navbar() {
 
   return (
     <div className="flex justify-between items-end">
-      <h1 className="text-3xl font-bold px-4 md:px-8 mt-6 md:mt-0">
+      <h1 className="text-2xl md:text-3xl font-bold px-4 md:px-8 mt-6 md:mt-0">
         {pathname === "/"
           ? "About Me"
           : pathname === "/resume"
